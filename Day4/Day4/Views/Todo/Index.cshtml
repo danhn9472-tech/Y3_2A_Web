@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Day4.Models.CV>
+
+@{
+    ViewData["Title"] = "Danh sách công việc";
+}
+
+<h1>DANH SÁCH CÔNG VIỆC</h1>
+<a asp-controller="Todo" asp-action="Create">Tạo mới công việc</a>
+<table>
+    <thead>
+        <tr>
+            <th>Mã công việc</th>
+			<th>Tên công việc</th>
+			<th>Trạng thái hoàn thành</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var CV in Model)
+        {
+            <tr>
+				<td>@CV.Id</td>
+                <td>@CV.Name</td>
+                <td><input type="checkbox" asp-for="@CV.status" class="form-check-input" /></td>
+                <td><a asp-controller="Todo" asp-action="Edit" asp-route-id="@CV.Id">Sửa</a></td>
+                <td><p>|</p></td>
+                <td><a asp-controller="Todo" asp-action="Detail">Chi tiết</a></td>
+                <td><p>|</p></td>
+                <td><a asp-controller="Todo" asp-action="Delete">Xóa</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+

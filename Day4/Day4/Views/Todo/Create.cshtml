@@ -1,0 +1,29 @@
+﻿@model CV
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Thêm mới công việc</h1>
+
+<form asp-action="Create" method="post">
+<div>
+    <label>Mã công việc</label><br />
+    <input asp-for="Id" class="form-control"/>
+</div>
+<hr />
+<div>
+    <p>Tên công việc</p>
+    <input asp-for="Name" class="form-control" />
+</div>
+<hr />
+<div>
+    <label>
+        <input asp-for="status" />Trạng thái hoàn thành
+    </label>
+</div>
+
+<button type="submit" >Tạo mới</button>
+<a asp-controller="Todo" asp-action="Index">Quay trở lại</a>
+
+</form>

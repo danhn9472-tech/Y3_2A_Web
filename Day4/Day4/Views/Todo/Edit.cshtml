@@ -1,0 +1,24 @@
+﻿@model CV
+
+@{
+    ViewData["Title"] = "Chỉnh sửa";
+}
+
+<form asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div>
+        <label>Tên công việc:</label>
+        <input asp-for="Name" />
+    </div>
+
+    <div>
+        <label>
+            <input asp-for="status" /> Đã hoàn thành
+        </label>
+    </div>
+
+    <button type="submit">Cập nhật</button>
+    <a asp-action="Index">Hủy</a>
+</form>
+
